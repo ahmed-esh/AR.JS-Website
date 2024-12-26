@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AR Video Viewer</title>
+  <title>AR Photo Overlay</title>
   <link rel="stylesheet" href="css/styles.css">
   <!-- Include Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -18,12 +18,17 @@
   </div>
   
   <a-scene embedded arjs>
-    <a-marker type="pattern" url="/Users/temp/Documents/Another test for AR website/Assets/marker1.patt" >
-      <a-video src="/Users/temp/Documents/Another test for AR website/Assets/video1.mp4" autoplay="false" width="2" height="1"></a-video>
+    <a-marker type="pattern" url="https://github.com/ahmed-esh/AR.JS-Website/blob/main/Assets/marker1.patt">
+      <a-image src="https://github.com/ahmed-esh/AR.JS-Website/blob/main/Assets/DD.png" width="2" height="2"></a-image>
     </a-marker>
     <a-entity camera></a-entity>
   </a-scene>
 
-  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('start-button').addEventListener('click', () => {
+      document.getElementById('start-screen').style.display = 'none';
+      document.querySelector('a-scene').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
